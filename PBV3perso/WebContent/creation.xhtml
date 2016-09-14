@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link type="text/css" rel="stylesheet" href="themes/bluesky/skin.css" />
+</h:head>
+
+<h:body>
+
+	<!-- Declaration du template dont la page est cliente -->
+	<ui:composition template="/template/layout.xhtml">
+	
+		<!-- Redefinition de la zone 'content' du layout -->
+		<ui:define name="content">
+		<center>
+					
+		<h:form>
+		  <h:panelGrid columns="2" cellpadding="5">
+	        <p:outputLabel for="nom" value="Nom : " />
+	        <p:inputText id="nom" value="#{clientBean.nom}" required="true"/>
+ 
+	        <p:outputLabel for="prenom" value="Prénom :" />
+	        <p:inputText id="prenom" value="#{clientBean.prenom}" required="true"/>
+ 
+			<p:outputLabel for="telephone" value="Numéro de téléphone :" />
+	        <p:inputText id="telephone" value="#{clientBean.telephone}" required="true"/> 
+
+	        <p:outputLabel for="email" value="Email :" />
+	        <p:inputText id="email" value="#{clientBean.email}" required="true"/>
+
+	        <p:outputLabel for="numeroDeRue" value="Numéro de voie :" />
+	        <p:inputText id="numeroDeRue" value="#{clientBean.numeroDeRue}" required="true"/>
+	        
+	        <p:outputLabel for="typeDeRue" value="Type de voie :" />
+	        <p:inputText id="typeDeRue" value="#{clientBean.typeDeRue}" required="true"/> 
+
+	        <p:outputLabel for="nomDeRue" value="Nom de voie :" />
+	        <p:inputText id="nomDeRue" value="#{clientBean.nomDeRue}" required="true"/>
+
+	        <p:outputLabel for="codePostal" value="Code postal :" />
+	        <p:inputText id="codePostal" value="#{clientBean.codePostal}" required="true"/>
+
+	        <p:outputLabel for="ville" value="Ville :" />
+	        <p:inputText id="ville" value="#{clientBean.ville}" required="true"/> 
+	        
+	        <p:commandButton value="Effacer" type="reset" />
+	        <p:commandButton value="Soumettre" action="#{clientBean.create}" oncomplete="accueil"/>
+	      </h:panelGrid>
+		</h:form>
+		
+		</center>
+		</ui:define>
+		
+	</ui:composition>
+
+	<center>
+					
+	</center>
+</h:body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link type="text/css" rel="stylesheet" href="themes/bluesky/skin.css" />
+</h:head>
+
+<h:body>
+
+	<!-- Declaration du template dont la page est cliente -->
+	<ui:composition template="/template/layout.xhtml">
+	
+		<!-- Redefinition de la zone 'content' du layout -->
+		<ui:define name="content">
+			<center>
+		<h3>Cliquer sur le client désiré.</h3>	
+		<h:form id="formDataTable">
+			<p:panel header="Liste clients" style="width: 700;">
+				<p:dataTable var="listeClients" value="#{conseillerBean.clients}">
+    				<p:column headerText="Id">
+    					<p:commandLink id="id" action="#{clientBean.select(listeClients.id)}" ajax="false">
+        				<h:outputText value="#{listeClients.id}" />
+        				</p:commandLink>
+    				</p:column>
+   					<p:column headerText="Nom">
+        				<h:outputText value="#{listeClients.nom}" />
+    				</p:column>
+    				<p:column headerText="Prenom">
+        				<h:outputText value="#{listeClients.prenom}" />
+    				</p:column>
+   					<p:column headerText="Adresse">
+        				<h:outputText value="#{listeClients.adresse}" />
+    				</p:column>
+				</p:dataTable>
+			</p:panel>
+
+		</h:form>
+	</center>
+		</ui:define>
+		
+	</ui:composition>
+
+	<center>
+					
+	</center>
+</h:body>
+</html>
