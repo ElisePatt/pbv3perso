@@ -1,5 +1,5 @@
 package com.elise.pbv3.dao;
 
-public class ICompteDao {
+public interface ICompteDao {
 
 }
