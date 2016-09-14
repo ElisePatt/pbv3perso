@@ -1,5 +1,8 @@
 package com.elise.pbv3.domaine;
 
+import javax.persistence.Entity;
+
+@Entity
 public class CompteCourant extends Compte {
 
 	// Constructeurs
