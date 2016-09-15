@@ -16,10 +16,10 @@
 			<h:form>
          
 			 <h:panelGrid columns="2" cellpadding="2">
-					<h:outputLabel for="#{conseillerBean.login}" value="Login" />
-					<h:inputText value="#{conseillerBean.login}" label="Login"></h:inputText>
-					<h:outputLabel for="#{conseillerBean.pwd}" value="Password" />
-					<h:inputSecret value="#{conseillerBean.pwd}"></h:inputSecret>
+					<h:outputLabel for="#{loginBean.login}" value="Login" />
+					<h:inputText value="#{loginBean.login}" label="Login"></h:inputText>
+					<h:outputLabel for="#{loginBean.pwd}" value="Password" />
+					<h:inputSecret value="#{loginBean.pwd}"></h:inputSecret>
 					
 					<h:commandButton type="submit" value="Login"
 						action="#{conseillerBean.login()}"></h:commandButton>
