@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public abstract class Compte {
@@ -12,6 +13,9 @@ public abstract class Compte {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	
+	@OneToOne //TODO verifier s'il faut mettre compte ou client (mappedBy="client")
+	private Client client;
 	
 	private float solde;
 	

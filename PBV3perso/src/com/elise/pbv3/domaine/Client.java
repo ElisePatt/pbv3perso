@@ -1,12 +1,16 @@
 package com.elise.pbv3.domaine;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Client extends Personne {
 	
+	@OneToOne
 	private Adresse adresse;
+	@OneToOne
 	private CompteCourant ccourant;
+	@OneToOne
 	private CompteEpargne cepargne;
 
 	// Constructeurs
